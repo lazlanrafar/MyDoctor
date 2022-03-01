@@ -1,7 +1,7 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {Button, Header, Input} from '../../components';
-import {colors} from '../../utils/Colors/inde';
+import {colors} from '../../utils';
 
 export default function Register({navigation}) {
   return (
