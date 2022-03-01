@@ -1,11 +1,12 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {IconBack} from '../../../assets';
+import {Button} from '../../atoms';
 
-export default function Header({text}) {
+export default function Header({text, onPress}) {
   return (
     <View style={styles.container}>
-      <IconBack />
+      <Button iconOnly={true} onPress={onPress} />
       <Text style={styles.title}>{text}</Text>
       <View style={{width: 24}} />
     </View>

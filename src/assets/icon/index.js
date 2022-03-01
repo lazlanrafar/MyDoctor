@@ -1,3 +1,5 @@
-import IconBack from './arrow_back.svg';
+import IconBack from './ic_arrow_back.svg';
+import IconAddPhoto from './ic_add_photo.svg';
+import IconRemovePhoto from './ic_remove_photo.svg';
 
-export {IconBack};
+export {IconBack, IconAddPhoto, IconRemovePhoto};

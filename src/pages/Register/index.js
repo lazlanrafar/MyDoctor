@@ -3,10 +3,10 @@ import React from 'react';
 import {Button, Header, Input} from '../../components';
 import {colors} from '../../utils/Colors/inde';
 
-export default function Register() {
+export default function Register({navigation}) {
   return (
     <View style={styles.page}>
-      <Header text={'Daftar Akun'} />
+      <Header text={'Daftar Akun'} onPress={() => navigation.goBack()} />
       <View style={styles.content}>
         <Input label="Full Name" />
         <View style={{height: 24}} />
@@ -16,7 +16,10 @@ export default function Register() {
         <View style={{height: 24}} />
         <Input label="Password" />
         <View style={{height: 40}} />
-        <Button title="Continue" />
+        <Button
+          title="Continue"
+          onPress={() => navigation.navigate('UploadPhoto')}
+        />
       </View>
     </View>
   );
