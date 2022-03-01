@@ -3,7 +3,7 @@ import React from 'react';
 import {Button} from '../../components';
 import {ILGetStarted, ILLogo} from '../../assets';
 
-export default function GetStarted() {
+export default function GetStarted({navigation}) {
   return (
     <ImageBackground source={ILGetStarted} style={styles.page}>
       <View>
@@ -13,9 +13,16 @@ export default function GetStarted() {
         </Text>
       </View>
       <View>
-        <Button title={'Get Started'} />
+        <Button
+          title={'Get Started'}
+          onPress={() => navigation.navigate('Register')}
+        />
         <View style={{height: 16}} />
-        <Button title={'Sign In'} type={false} />
+        <Button
+          title={'Sign In'}
+          type={false}
+          onPress={() => navigation.navigate('Login')}
+        />
       </View>
     </ImageBackground>
   );
