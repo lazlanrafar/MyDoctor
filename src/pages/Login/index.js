@@ -4,7 +4,7 @@ import {ILLogo} from '../../assets';
 import {Button, Input, Link} from '../../components';
 import {colors} from '../../utils';
 
-export default function Login() {
+export default function Login({navigation}) {
   return (
     <View style={styles.page}>
       <ILLogo />
@@ -15,7 +15,7 @@ export default function Login() {
       <View style={{height: 10}} />
       <Link title={'Forgot My Password'} fontSize={12} align={'left'} />
       <View style={{height: 40}} />
-      <Button title={'Sign In'} />
+      <Button title={'Sign In'} onPress={() => navigation.replace('MainApp')} />
       <View style={{height: 30}} />
       <Link title={'Create New Account'} />
     </View>

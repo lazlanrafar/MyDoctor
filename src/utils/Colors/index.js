@@ -3,6 +3,7 @@ export const colors = {
   gray: '#EDEEF0',
   white: '#FFFFFF',
   border: '#E9E9E9',
+  navbar: '#112340',
   text: {
     black: '#112340',
     white: '#fff',
