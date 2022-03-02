@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {
   ILChatDokAnak,
@@ -8,7 +8,7 @@ import {
 } from '../../../assets';
 import {colors, fonts} from '../../../utils';
 
-export default function DoctorCategory({title}) {
+export default function DoctorCategory({title, onPress}) {
   const Icon = () => {
     if (title === 'Dokter Umum') {
       return <ILChatDokUmum />;
@@ -25,12 +25,12 @@ export default function DoctorCategory({title}) {
     return <ILChatDokUmum />;
   };
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
       <Icon />
       <View style={{height: 28}} />
       <Text style={styles.label}>Saya Butuh</Text>
       <Text style={styles.value}>{title}</Text>
-    </View>
+    </TouchableOpacity>
   );
 }
 
@@ -41,6 +41,8 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
     borderRadius: 10,
     marginRight: 10,
+    minWidth: 100,
+    minHeight: 130,
   },
   label: {
     fontFamily: fonts.primary.light,

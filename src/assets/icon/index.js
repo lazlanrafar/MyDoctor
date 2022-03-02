@@ -1,4 +1,5 @@
 import IconBack from './ic_arrow_back.svg';
+import IconBackLight from './ic_arrow_back_light.svg';
 import IconAddPhoto from './ic_add_photo.svg';
 import IconRemovePhoto from './ic_remove_photo.svg';
 import IconDoctor from './ic_doctor.svg';
@@ -11,6 +12,7 @@ import IconStar from './ic_star.svg';
 
 export {
   IconBack,
+  IconBackLight,
   IconAddPhoto,
   IconRemovePhoto,
   IconDoctor,

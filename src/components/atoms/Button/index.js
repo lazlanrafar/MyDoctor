@@ -1,19 +1,28 @@
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React from 'react';
-import {IconBack} from '../../../assets';
+import {IconBack, IconBackLight} from '../../../assets';
 
 export default function Button({
   type = true,
   title,
   onPress,
   iconOnly = false,
+  dark = false,
 }) {
   if (iconOnly) {
-    return (
-      <TouchableOpacity onPress={onPress}>
-        <IconBack />
-      </TouchableOpacity>
-    );
+    if (dark) {
+      return (
+        <TouchableOpacity onPress={onPress}>
+          <IconBackLight />
+        </TouchableOpacity>
+      );
+    } else {
+      return (
+        <TouchableOpacity onPress={onPress}>
+          <IconBack />
+        </TouchableOpacity>
+      );
+    }
   } else {
     return (
       <TouchableOpacity style={styles.container(type)} onPress={onPress}>

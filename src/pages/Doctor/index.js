@@ -4,7 +4,7 @@ import {DoctorCategory, RatedDoctor} from '../../components';
 import {DummyNews1, DummyNews2, DummyNews3, DummyUser} from '../../assets';
 import {colors, fonts} from '../../utils';
 
-export default function Doctor() {
+export default function Doctor({navigation}) {
   let UserProfile = () => {
     return (
       <View style={{flexDirection: 'row'}}>
@@ -87,10 +87,22 @@ export default function Doctor() {
 
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           <View style={{flexDirection: 'row'}}>
-            <DoctorCategory title={'Dokter Umum'} />
-            <DoctorCategory title={'Psikiater'} />
-            <DoctorCategory title={'Dokter Obat'} />
-            <DoctorCategory title={'Dokter Anak'} />
+            <DoctorCategory
+              title={'Dokter Umum'}
+              onPress={() => navigation.navigate('ChooseDoctor')}
+            />
+            <DoctorCategory
+              title={'Psikiater'}
+              onPress={() => navigation.navigate('ChooseDoctor')}
+            />
+            <DoctorCategory
+              title={'Dokter Obat'}
+              onPress={() => navigation.navigate('ChooseDoctor')}
+            />
+            <DoctorCategory
+              title={'Dokter Anak'}
+              onPress={() => navigation.navigate('ChooseDoctor')}
+            />
           </View>
         </ScrollView>
 
