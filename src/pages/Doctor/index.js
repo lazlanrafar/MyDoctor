@@ -6,6 +6,27 @@ import {colors, fonts} from '../../utils';
 
 export default function Doctor() {
   let UserProfile = () => {
+    const UserProfileStyle = StyleSheet.create({
+      container: {
+        flexDirection: 'row',
+      },
+      avatar: {
+        width: 46,
+        height: 46,
+        borderRadius: 46 / 2,
+        marginRight: 12,
+      },
+      name: {
+        fontSize: 16,
+        fontFamily: fonts.primary.semiBold,
+        color: colors.text.black,
+      },
+      job: {
+        fontSize: 12,
+        fontFamily: fonts.primary.regular,
+        color: colors.text.gray,
+      },
+    });
     return (
       <View style={UserProfileStyle.container}>
         <Image source={DummyUser} style={UserProfileStyle.avatar} />
@@ -16,6 +37,7 @@ export default function Doctor() {
       </View>
     );
   };
+
   let NewsItem = () => {
     return (
       <View>
@@ -25,32 +47,34 @@ export default function Doctor() {
   };
 
   return (
-    <View style={styles.page}>
-      <UserProfile />
+    <ScrollView showsVerticalScrollIndicator={false}>
+      <View style={styles.page}>
+        <UserProfile />
 
-      <View style={{height: 30}} />
-      <Text style={styles.h1}>Mau konsultasi dengan siapa hari ini?</Text>
-      <View style={{height: 16}} />
+        <View style={{height: 30}} />
+        <Text style={styles.h1}>Mau konsultasi dengan siapa hari ini?</Text>
+        <View style={{height: 16}} />
 
-      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        <View style={styles.category}>
-          <DoctorCategory title={'Dokter Umum'} />
-          <DoctorCategory title={'Psikiater'} />
-          <DoctorCategory title={'Dokter Obat'} />
-          <DoctorCategory title={'Dokter Anak'} />
-        </View>
-      </ScrollView>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+          <View style={styles.category}>
+            <DoctorCategory title={'Dokter Umum'} />
+            <DoctorCategory title={'Psikiater'} />
+            <DoctorCategory title={'Dokter Obat'} />
+            <DoctorCategory title={'Dokter Anak'} />
+          </View>
+        </ScrollView>
 
-      <Text style={styles.h2}>Top Rated Doctors</Text>
-      <RatedDoctor />
-      <RatedDoctor />
-      <RatedDoctor />
+        <Text style={styles.h2}>Top Rated Doctors</Text>
+        <RatedDoctor />
+        <RatedDoctor />
+        <RatedDoctor />
 
-      <Text style={styles.h2}>Good News</Text>
-      <NewsItem />
-      <NewsItem />
-      <NewsItem />
-    </View>
+        <Text style={styles.h2}>Good News</Text>
+        <NewsItem />
+        <NewsItem />
+        <NewsItem />
+      </View>
+    </ScrollView>
   );
 }
 
@@ -75,27 +99,5 @@ const styles = StyleSheet.create({
   },
   category: {
     flexDirection: 'row',
-  },
-});
-
-const UserProfileStyle = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-  },
-  avatar: {
-    width: 46,
-    height: 46,
-    borderRadius: 46 / 2,
-    marginRight: 12,
-  },
-  name: {
-    fontSize: 16,
-    fontFamily: fonts.primary.semiBold,
-    color: colors.text.black,
-  },
-  job: {
-    fontSize: 12,
-    fontFamily: fonts.primary.regular,
-    color: colors.text.gray,
   },
 });
