@@ -1,9 +1,8 @@
 import {StyleSheet, Text, View, Image} from 'react-native';
 import React from 'react';
 import {colors, fonts} from '../../../utils';
-import {DummyDoctor1} from '../../../assets';
 
-export default function ListChat() {
+export default function ListChat({name, lastMessage, avatar}) {
   return (
     <View
       style={{
@@ -14,7 +13,7 @@ export default function ListChat() {
         alignItems: 'center',
       }}>
       <Image
-        source={DummyDoctor1}
+        source={avatar}
         style={{width: 46, height: 46, borderRadius: 46 / 2, marginRight: 12}}
       />
       <View>
@@ -24,7 +23,7 @@ export default function ListChat() {
             color: colors.text.black,
             fontSize: 16,
           }}>
-          Alexander Jannie
+          {name}
         </Text>
         <Text
           style={{
@@ -32,7 +31,7 @@ export default function ListChat() {
             color: colors.text.gray,
             fontSize: 12,
           }}>
-          Baik ibu, terima kasih banyak atas wakt...
+          {lastMessage}
         </Text>
       </View>
     </View>
