@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, Image, ScrollView} from 'react-native';
 import React from 'react';
 import {DoctorCategory, RatedDoctor} from '../../components';
 import {DummyUser} from '../../assets';
@@ -32,10 +32,14 @@ export default function Doctor() {
       <Text style={styles.h1}>Mau konsultasi dengan siapa hari ini?</Text>
       <View style={{height: 16}} />
 
-      <DoctorCategory />
-      <DoctorCategory />
-      <DoctorCategory />
-      <DoctorCategory />
+      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+        <View style={styles.category}>
+          <DoctorCategory title={'Dokter Umum'} />
+          <DoctorCategory title={'Psikiater'} />
+          <DoctorCategory title={'Dokter Obat'} />
+          <DoctorCategory title={'Dokter Anak'} />
+        </View>
+      </ScrollView>
 
       <Text style={styles.h2}>Top Rated Doctors</Text>
       <RatedDoctor />
@@ -54,6 +58,7 @@ const styles = StyleSheet.create({
   page: {
     paddingVertical: 30,
     paddingHorizontal: 16,
+    backgroundColor: colors.white,
   },
   h1: {
     fontSize: 20,
@@ -65,6 +70,11 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontFamily: fonts.primary.semiBold,
     color: colors.text.black,
+    marginTop: 30,
+    marginBottom: 16,
+  },
+  category: {
+    flexDirection: 'row',
   },
 });
 

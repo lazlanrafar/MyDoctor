@@ -19,9 +19,9 @@ export default function TabItem({title, active, onPress, onLongPress}) {
       return active ? <IconMessagesActive /> : <IconMessages />;
     }
     if (title === 'Hospitals') {
-      return <IconHospitals />;
+      return active ? <IconHospitalsActive /> : <IconHospitals />;
     }
-    return active ? <IconHospitalsActive /> : <IconDoctor />;
+    return <IconDoctor />;
   };
   return (
     <TouchableOpacity
