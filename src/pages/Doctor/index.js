@@ -1,47 +1,77 @@
 import {StyleSheet, Text, View, Image, ScrollView} from 'react-native';
 import React from 'react';
 import {DoctorCategory, RatedDoctor} from '../../components';
-import {DummyUser} from '../../assets';
+import {DummyNews1, DummyNews2, DummyNews3, DummyUser} from '../../assets';
 import {colors, fonts} from '../../utils';
 
 export default function Doctor() {
   let UserProfile = () => {
-    const UserProfileStyle = StyleSheet.create({
-      container: {
-        flexDirection: 'row',
-      },
-      avatar: {
-        width: 46,
-        height: 46,
-        borderRadius: 46 / 2,
-        marginRight: 12,
-      },
-      name: {
-        fontSize: 16,
-        fontFamily: fonts.primary.semiBold,
-        color: colors.text.black,
-      },
-      job: {
-        fontSize: 12,
-        fontFamily: fonts.primary.regular,
-        color: colors.text.gray,
-      },
-    });
     return (
-      <View style={UserProfileStyle.container}>
-        <Image source={DummyUser} style={UserProfileStyle.avatar} />
+      <View style={{flexDirection: 'row'}}>
+        <Image
+          source={DummyUser}
+          style={{
+            width: 46,
+            height: 46,
+            borderRadius: 46 / 2,
+            marginRight: 12,
+          }}
+        />
         <View>
-          <Text style={UserProfileStyle.name}>Shayna Melinda</Text>
-          <Text style={UserProfileStyle.job}>Product Designer</Text>
+          <Text
+            style={{
+              fontSize: 16,
+              fontFamily: fonts.primary.semiBold,
+              color: colors.text.black,
+            }}>
+            Shayna Melinda
+          </Text>
+          <Text
+            style={{
+              fontSize: 12,
+              fontFamily: fonts.primary.regular,
+              color: colors.text.gray,
+            }}>
+            Product Designer
+          </Text>
         </View>
       </View>
     );
   };
 
-  let NewsItem = () => {
+  let NewsItem = ({title, date, Icon}) => {
     return (
-      <View>
-        <Text>NewsItem</Text>
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          marginBottom: 16,
+          alignItems: 'center',
+        }}>
+        <View>
+          <Text
+            style={{
+              maxWidth: 200,
+              fontFamily: fonts.primary.semiBold,
+              fontSize: 16,
+              color: colors.text.black,
+              marginBottom: 4,
+            }}>
+            {title}
+          </Text>
+          <Text
+            style={{
+              fontFamily: fonts.primary.regular,
+              color: colors.text.gray,
+              fontSize: 12,
+            }}>
+            {date}
+          </Text>
+        </View>
+        <Image
+          source={Icon}
+          style={{width: 80, height: 60, borderRadius: 10}}
+        />
       </View>
     );
   };
@@ -56,7 +86,7 @@ export default function Doctor() {
         <View style={{height: 16}} />
 
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-          <View style={styles.category}>
+          <View style={{flexDirection: 'row'}}>
             <DoctorCategory title={'Dokter Umum'} />
             <DoctorCategory title={'Psikiater'} />
             <DoctorCategory title={'Dokter Obat'} />
@@ -70,9 +100,21 @@ export default function Doctor() {
         <RatedDoctor />
 
         <Text style={styles.h2}>Good News</Text>
-        <NewsItem />
-        <NewsItem />
-        <NewsItem />
+        <NewsItem
+          title={'Is it safe to stay at home during coronavirus?'}
+          date={'today'}
+          Icon={DummyNews2}
+        />
+        <NewsItem
+          title={'Consume yellow citrus helps you healthier'}
+          date={'today'}
+          Icon={DummyNews3}
+        />
+        <NewsItem
+          title={'Learn how to make a proper orange juice at home'}
+          date={'today'}
+          Icon={DummyNews1}
+        />
       </View>
     </ScrollView>
   );
@@ -96,8 +138,5 @@ const styles = StyleSheet.create({
     color: colors.text.black,
     marginTop: 30,
     marginBottom: 16,
-  },
-  category: {
-    flexDirection: 'row',
   },
 });
