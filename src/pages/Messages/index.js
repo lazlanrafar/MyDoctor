@@ -25,6 +25,11 @@ export default function Messages() {
         <ListChat />
         <ListChat />
         <ListChat />
+        <ListChat />
+        <ListChat />
+        <ListChat />
+        <ListChat />
+        <ListChat />
       </View>
     </ScrollView>
   );

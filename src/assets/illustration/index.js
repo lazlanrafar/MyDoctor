@@ -5,6 +5,7 @@ import ILChatDokAnak from './chat-dok-anak.svg';
 import ILChatDokObat from './chat-dok-obat.svg';
 import ILChatDokPsikiater from './chat-dok-psikiater.svg';
 import ILChatDokUmum from './chat-dok-umum.svg';
+import ILCoverHospital from './cover-hospital.png';
 
 export {
   ILLogo,
@@ -14,4 +15,5 @@ export {
   ILChatDokObat,
   ILChatDokPsikiater,
   ILChatDokUmum,
+  ILCoverHospital,
 };
