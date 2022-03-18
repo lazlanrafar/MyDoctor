@@ -17,6 +17,7 @@ export default function ChooseDoctor({navigation}) {
         avatar={DummyDoctor1}
         name={'Alexander Jannie'}
         lastMessage={'Wanita'}
+        onPress={() => navigation.navigate('Chatting')}
       />
     </View>
   );
